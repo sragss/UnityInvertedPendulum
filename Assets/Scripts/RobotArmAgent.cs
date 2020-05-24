@@ -61,40 +61,22 @@ public class RobotArmAgent : Agent
     }
 
     private void collectObservation(){
-        // Vector3 localArmAngVel = 
-        //     arm.transform.InverseTransformDirection(rb_arm.angularVelocity);
-        // Vector3 localAxleAngVel = 
-        //     axle.transform.InverseTransformDirection(rb_axle.angularVelocity);
-
         float continuousAxleAngle = getContinuousAxleAngle(axle);
         float posReward = 90-Mathf.Abs(continuousAxleAngle);  // Should range 0 - 180
         float reward = (posReward*posReward) / (90f*90f);
 
-        // mesh.text = (
-            // reward.ToString("000.0") + ", " +
-            // controlTorque.ToString("0.0##") + ", " + 
-            // continuousAxleAngle.ToString("0.0##") + ", " + 
-            // axle.transform.localRotation.eulerAngles.z.ToString("0.0##") + ", " + 
-            // localArmAngVel.y.ToString("0.0##") + ", " +
-            // localAxleAngVel.z.ToString("0.0####")); 
+        mesh.text = (continuousAxleAngle.ToString("0.0##"));
         SetReward(Mathf.Abs(continuousAxleAngle) < 75 ? reward : -0.025f);
 
         float spawnDistance = 
             Academy.Instance.EnvironmentParameters.GetWithDefault("spawn_angle_max", 180f);
         float cancelAngle = spawnDistance*1.5f;
-        // if(Mathf.Abs(continuousAxleAngle) > cancelAngle && cancelAngle < 60){
-        //     EndEpisode();
-        // }
-        // if (Mathf.Abs(continuousAxleAngle) > 360) {
-        //     EndEpisode();
-        // }
     }
 
     public override void OnEpisodeBegin() {
         float spawnDistance = 
             Academy.Instance.EnvironmentParameters.GetWithDefault("spawn_angle_max", 180f);
         resetToStart();
-        // float startAngleOffset = Random.Range(-1*spawnDistance, spawnDistance);
         float startAngleOffset = Random.Range(-1*spawnDistance, spawnDistance);
         if (startAngleOffset > 0) {
             rotationCounter = 0;
@@ -102,9 +84,7 @@ public class RobotArmAgent : Agent
             rotationCounter = -1;
         }
         lastAngle = startAngleOffset;
-        // print("startAngleOffset: " + startAngleOffset);
         axle.transform.localRotation = Quaternion.Euler(0f, 0f, startAngleOffset);
-        print("starting axle at" + getContinuousAxleAngle(axle));
 
         stepCounter = 0;
     }
