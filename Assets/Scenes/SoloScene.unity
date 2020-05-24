@@ -134,6 +134,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2995983790632429731, guid: a41a0bd0537114c8ba5a441abec1785c,
+        type: 3}
+      propertyPath: TakeActionsBetweenDecisions
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995983790632429731, guid: a41a0bd0537114c8ba5a441abec1785c,
+        type: 3}
+      propertyPath: DecisionPeriod
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4514041245833477137, guid: a41a0bd0537114c8ba5a441abec1785c,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -204,6 +214,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8193464591564627292, guid: a41a0bd0537114c8ba5a441abec1785c,
+        type: 3}
+      propertyPath: m_BehaviorName
+      value: RobotSpinSingle
+      objectReference: {fileID: 0}
     - target: {fileID: 8214329586981440833, guid: a41a0bd0537114c8ba5a441abec1785c,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -213,6 +228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164326468187651128, guid: a41a0bd0537114c8ba5a441abec1785c,
+        type: 3}
+      propertyPath: torqueMultiplier
+      value: 2000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a41a0bd0537114c8ba5a441abec1785c, type: 3}

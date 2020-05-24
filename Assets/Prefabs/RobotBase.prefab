@@ -648,8 +648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 5
-  TakeActionsBetweenDecisions: 1
+  DecisionPeriod: 1
+  TakeActionsBetweenDecisions: 0
 --- !u!114 &9164326468187651128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,11 +665,11 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 1000
   arm: {fileID: 6740856785869788080}
   axle: {fileID: 1185242063130903446}
   endEffector: {fileID: 6740856785405059232}
-  torqueMultiplier: 15000
+  torqueMultiplier: 5000
   text: {fileID: 8148287445408801403}
 --- !u!1 &8148287445408801403
 GameObject:
